@@ -1,1 +1,27 @@
 Use the newest Facebook PHP SDK and put the files from src here. Don't forget to change the class name from Facebook to Facebook_Facebook.
+
+Then create virtual host for the application
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/dev.local.recruitbpm.com.conf
+sudo nano /etc/
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/dev.local.recruitbpm.com.conf
+sudo nano /etc/apache2/sites-available/dev.local.recruitbpm.com.conf
+Now modify the file with below information:
+ServerName dev.local.recruitbpm.com
+DocumentRoot /var/www/html/new_dev_public_html/public
+<Directory /var/www/html/new_dev_public_html/public/>
+                DirectoryIndex index.php
+                AllowOverride All
+                Order allow,deny
+                Allow from all
+</Directory>
+
+
+Now Save the file and run the command below for enable the virtual host.
+sudo a2ensite dev.local.recruitbpm.com.conf
+sudo a2enmod rewrite
+sudo service apache2 restart
+Now Open file hosts and add the entry for your host.
+sudo nano /etc/hosts
+127.0.0.1       dev.local.recruitbpm.com
+NOTES
+Restart the system for take effect.
