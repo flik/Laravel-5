@@ -1,5 +1,7 @@
 Use the newest Facebook PHP SDK and put the files from src here. Don't forget to change the class name from Facebook to Facebook_Facebook.
 
+https://www.sammyk.me/upgrading-the-facebook-php-sdk-from-v3-x-to-v5
+
 Then create virtual host for the application
 sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/dev.local.recruitbpm.com.conf
 sudo nano /etc/
